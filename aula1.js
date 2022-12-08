@@ -1,11 +1,20 @@
+
 var http = require('http');
-var dia = require('./biblioteca')
-http.createServer(function (req, res){
+var url = require('url');
 
-    res.writeHead(200, {'Content-Type':'text/html' });
-    res.write('<h2 align = center>Brasil 2x0 Suíça</h2>');
-    res.write(Date().substring(16, 24)+'<br>');
-    res.write('<p align = center >'+dia.diaDaSemana()+'</p>'+'<BR>');
-    res.end('<p style=color:green> Uma pena....</p>');
+var data = require('./primeiromodulo');
 
+http.createServer(function(req, res){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('<center><h1>Aula de Javascript</h1></center>');
+    res.write('<h2>Servidor criado!</h2>');
+    res.write('Endereco acessado: '+req.url+'<br>');
+    var q = url.parse(req.url, true).query;
+    var ano = q.ano;
+    var mes = q.mes;
+    var cidade = q.cidade;
+    res.write('Data: '+mes+'/'+ano);
+    res.write('Cidade: '+cidade);
+    
+    res.end();
 }).listen(3000);
