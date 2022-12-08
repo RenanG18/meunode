@@ -5,6 +5,8 @@ var q = url.parse(adr,true);
 console.log(q.host);
 console.log(q.pathname);
 console.log(q.search);
+console.log('Brasil 1x2 Croácia');
+
 
 var qdata = q.query;
 console.log(qdata.mes);
