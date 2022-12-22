@@ -1,1 +1,1 @@
-Texto: Vai aparecer dentro do arquivo
+Texto: Vai aparecer dentro do arquivo.
